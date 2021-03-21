@@ -112,9 +112,10 @@ export default {
             content: this.content,
             seq: this.$route.params.seq
         }
-        req2svr.updateList(updateOjb)
+        req2svr.updateList(updateOjb).then( ()=> {
+            this.$router.push({ name: 'accountlist', params: {date: this.updateDate}})
+        })
         
-        this.$router.push({ name: 'accountlist', params: {date: this.updateDate}})
     },
     pushCancleButton() {
         this.$router.push({ name: 'accountlist' })
