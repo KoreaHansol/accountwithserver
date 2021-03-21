@@ -100,10 +100,9 @@ export default {
             content: this.content
         }
 
-        req2svr.addList(insertOjb)
-
-        // this.$store.commit('insertIntoAccList', insertOjb)
-        this.$router.push({ name: 'accountlist', params: {date: this.insertDate}})
+        req2svr.addList(insertOjb).then(()=> {
+            this.$router.push({ name: 'accountlist', params: {date: this.insertDate}})
+        })
     },
     pushCancleButton() {
         this.$router.push({ name: 'accountlist' })

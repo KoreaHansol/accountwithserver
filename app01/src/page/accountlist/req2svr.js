@@ -12,9 +12,9 @@ export default {
       }
     } )
   },
-  regieterData( name, age ) {
-    return axios.post( 'http://localhost:9191/app01/page/helloworld/registerdata',{
-      name: name, age: age
+  deleteList( seq ) {
+    return axios.post( 'http://localhost:9191/page/accountList/deleteList',{
+      seq: seq
     } ).then( res => res.data )
   }
 }

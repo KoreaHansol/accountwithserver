@@ -113,7 +113,9 @@ export default {
       this.$router.push({ name: 'accountupdate', params: {seq: seq}})
     },
     deleteAccListToSeq(seq) {
-      this.$store.commit('deleteAccByAccList', seq)
+      req2svr.deleteList(seq).then(()=> {
+        this.reqAccListToServer()
+      })
     }
   }
 }
