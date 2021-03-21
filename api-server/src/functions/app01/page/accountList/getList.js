@@ -3,7 +3,7 @@ const dbTran = require( '@/util/mysqldb' )
 
 module.exports = async function( event, context ) {
   return await dbTran( async function( conn ) {
-    let results = await conn.query( 'select * from `mytest`.mytable' )
+    let results = await conn.query( 'select * from `account`.account_list' )
     const list = conn.resultsAsCamelCase( results )
 
     return {

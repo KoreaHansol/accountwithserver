@@ -32,6 +32,7 @@
 
 <script>
 import Calender from '@/components/calander'
+import req2svr from './req2svr'
 export default {
   name: 'accountadd',
   components: {
@@ -87,14 +88,16 @@ export default {
         if(this.validationForm().length) {
             return
         }
-            
         const insertOjb = {
             date: this.insertDate,
             income: this.insertIncome,
             outcome: this.insertOutcome,
             content: this.content
         }
-        this.$store.commit('insertIntoAccList', insertOjb)
+
+        req2svr.addList(insertOjb)
+
+        // this.$store.commit('insertIntoAccList', insertOjb)
         this.$router.push({ name: 'accountlist', params: {date: this.insertDate}})
     },
     pushCancleButton() {

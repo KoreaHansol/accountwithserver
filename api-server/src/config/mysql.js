@@ -20,8 +20,8 @@ if (process.env.NODE_ENV === "production") {
   connectOption = _.get( localConfig, 'mysql.connectOption',
   {
     host: "localhost",
-    user: "smallbee",
-    password: "smallbee",
+    user: "root",
+    password: "1234",
     connectionLimit : 2
   })
 }

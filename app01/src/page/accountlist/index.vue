@@ -38,6 +38,7 @@
 <script>
 import Calender from '@/components/calander'
 import moment from 'moment'
+import req2svr from './req2svr'
 import _ from 'lodash'
 export default {
   name: 'accoutlist',
@@ -70,12 +71,24 @@ export default {
     }
   },
   created() {
-    if(this.$route.params.date) {
-      this.selectYear = moment(this.$route.params.date).year()
-      this.selectMonth = moment(this.$route.params.date).month() + 1
-    }
+    this.reqAccListToServer();
+    this.searchMonthByParams();
   },
   methods: {
+    reqAccListToServer() {
+      let accountListFromServer = []
+      req2svr.getAllAccountList()
+      .then( res => {
+        accountListFromServer = res.payload;
+        this.$store.commit('setAccoutListFromServer', accountListFromServer) //store에 저장
+      })
+    },
+    searchMonthByParams() { //수정이나 등록하고 리스트에 돌아왔을시 수정한 달을 조회하기 위한 메소드
+      if(this.$route.params.date) {
+        this.selectYear = moment(this.$route.params.date).year()
+        this.selectMonth = moment(this.$route.params.date).month() + 1
+      }
+    },
     moveMonthClickEvent(mode) { //현재 select 된 년도와 달을 조정하기 위한 메소드
       switch(mode) {
         case 'increase':

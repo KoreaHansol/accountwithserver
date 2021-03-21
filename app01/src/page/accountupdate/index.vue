@@ -32,6 +32,7 @@
 
 <script>
 import Calender from '@/components/calander'
+import req2svr from './req2svr'
 import _ from 'lodash'
 export default {
   name: 'accountupdate',
@@ -111,7 +112,8 @@ export default {
             content: this.content,
             seq: this.$route.params.seq
         }
-        this.$store.commit('updateIntoAccList', updateOjb)
+        req2svr.updateList(updateOjb)
+        
         this.$router.push({ name: 'accountlist', params: {date: this.updateDate}})
     },
     pushCancleButton() {

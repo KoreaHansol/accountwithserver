@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export default {
   getAllAccountList() {
-    return axios.get( 'http://localhost:9191/page/home/get' )
+    return axios.get( 'http://localhost:9191/page/accountList/get' )
     .then( res => res.data )
     .then( res => {
       if( res.code !== 200 ) {

@@ -3,7 +3,6 @@ const errRes = require( '@/util/errres' )
 
 const page = require( './page' )
 const popup = require( './popup' )
-
 module.exports.handler = async function( event, context ) {
   if( !event.header || !event.path ) {
     return ''
@@ -14,8 +13,7 @@ module.exports.handler = async function( event, context ) {
   try {
     let section = event.path.section
     section = section ? section.toLowerCase() : section
-
-    if( section === 'page' ) {
+    if( section === 'page' ) { //url -> /page/
       return await page.handler( event, context )
     } else if( section === 'popup' ) {
       return await popup.handler( event, context )
@@ -28,6 +26,6 @@ module.exports.handler = async function( event, context ) {
 }
 
 module.exports.dev = {
-  url : '/app01/:section/:comp/:method',
+  url : '/:section/:comp/:method',
   method: 'get,post'
 }
