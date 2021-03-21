@@ -8,15 +8,15 @@
     </div>
     <div class="area">
         <div class="font">내용</div>
-        <div class="input-area"><input class="inputbox" :class="{ error: errorValidContent && !content }" placeholder="내용을 입력하세요" v-model="content"/></div>
+        <div class="input-area"><input class="inputbox" :class="{ error: errorValidContent && !content }" maxlength="8"  placeholder="내용을 입력하세요" v-model="content"/></div>
     </div>
     <div class="area">
         <div class="font">수입</div>
-        <div class="input-area"><input class="inputbox" :class="{ error: errorIncome && !insertIncome }" type="number" placeholder="숫자를 입력하세요" v-model="insertIncome"/></div>
+        <div class="input-area"><input class="inputbox" :class="{ error: errorIncome && !insertIncome }" type="number" placeholder="숫자를 입력하세요" v-model="insertIncome" @input="maxLengthCheck($event)"/></div>
     </div>
     <div class="area">
         <div class="font">지출</div>
-        <div class="input-area"><input class="inputbox" :class="{ error: errorValidOutcome && !insertOutcome }" type="number" placeholder="숫자를 입력하세요" v-model="insertOutcome"/></div>
+        <div class="input-area"><input class="inputbox" :class="{ error: errorValidOutcome && !insertOutcome }" type="number" placeholder="숫자를 입력하세요" v-model="insertOutcome" @input="maxLengthCheck($event)"/></div>
     </div>
     
     <div class="button-container">
@@ -83,6 +83,11 @@ export default {
             alert('필수 데이터를 입력하세요')
         }
         return validationError
+    },
+    maxLengthCheck(evt) { //input type이 number일경우 maxLength가 먹히지 않으므로 메소드로 처리
+        if (evt.target.value.length > 10){
+            this.insertIncome = evt.target.value.slice(0, 10);
+        }    
     },
     addintoAccList() {
         if(this.validationForm().length) {

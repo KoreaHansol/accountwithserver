@@ -26,6 +26,8 @@ module.exports = async function( event, context ) {
 
 const sql = {
   insertSample : `
-    UPDATE \`account\`.ACCOUNT_LIST SET DATE=?, CONTENT=?, INCOME=?, OUTCOME=? WHERE seq=? 
+    UPDATE \`account\`.ACCOUNT_LIST SET 
+    DATE=?, CONTENT=?, INCOME=?, OUTCOME=? 
+    WHERE seq=? 
   `
 }
