@@ -124,21 +124,21 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang='scss'>
     .container {
         height: 100%;
         display: flex;
         flex-direction: column;
-    }
-    .container .cal-area {
-        height: 40%;
-    }
-    .container .area {
-        display: flex;
-        flex-direction: row;
-        height: 10%;
-        background: blueviolet;
-        border: 1px solid;
+        .cal-area {
+            height: 40%;
+        }
+        .area {
+            display: flex;
+            flex-direction: row;
+            height: 10%;
+            background: blueviolet;
+            border: 1px solid;
+        }
     }
     .font {
         text-align: center;
@@ -159,25 +159,23 @@ export default {
         height: 50%;
         width: 100%;
     }
-
-
     .button-container {
         display: flex;
         flex-direction: row-reverse;
         height: 40%;
-    }
-    .button-container .button-area {
-        display: flex;
-        height: 20%;
-        width: 10%;
-        border: 1px solid;
-        background: darkolivegreen;
-        align-items: center;
-        justify-content: center;
-    }
-    .button-container .button-area:hover {
-        cursor: pointer;
-        background: tomato;
+        .button-area {
+            display: flex;
+            height: 20%;
+            width: 10%;
+            border: 1px solid;
+            background: darkolivegreen;
+            align-items: center;
+            justify-content: center;
+        }
+        .button-area:hover {
+            cursor: pointer;
+            background: tomato;
+        }
     }
     .button-font {
         color: white;

@@ -10,19 +10,19 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang='scss'>
   .app {
     display: flex;
     flex-direction: column;
     height: 100%;
-  }
-  .app .header {
-    display: flex;
-    height: 10%;
-    background: tomato;
-    justify-content: center;
-  }
-  .app .header .header-font {
-    align-self: center;
+    .header {
+      display: flex;
+      height: 10%;
+      background: tomato;
+      justify-content: center;
+      .header-font {
+        align-self: center;
+      }
+    }
   }
 </style>

@@ -24,20 +24,19 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang='scss'>
   .app {
     display: flex;
     flex-direction: column;
     height: 100%;
+    .row-container {
+      height: 90%;
+      display: flex;
+      flex-direction: row;
+      .side-menu {
+        width: 15%;
+        background: wheat;
+      }
+    }
   }
-  .app .row-container {
-    height: 90%;
-    display: flex;
-    flex-direction: row;
-  }
-  .app .row-container .side-menu {
-    width: 15%;
-    background: wheat;
-  }
-  
 </style>

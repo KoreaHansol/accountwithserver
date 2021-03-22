@@ -24,29 +24,26 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang='scss'>
     .side-menu {
         display: flex;
         flex-direction: column;
         text-align: center;
-    }
-    .side-menu .home {
-        height: 10%;
-        background: rgb(175, 167, 118) ;
-        justify-content: center;
-    }
-    .side-menu .insert {
-        height: 10%;
-        background: rgb(175, 167, 118) ;
-        justify-content: center;
-    }
-    .side-menu .list {
-        height: 10%;
-        background: rgb(175, 167, 118) ;
-        justify-content: center;
-    }
-    .font {
-
+        .home {
+            height: 10%;
+            background: rgb(175, 167, 118) ;
+            justify-content: center;
+        }
+        .insert {
+            height: 10%;
+            background: rgb(175, 167, 118) ;
+            justify-content: center;
+        }
+        .list {
+            height: 10%;
+            background: rgb(175, 167, 118) ;
+            justify-content: center;
+        }
     }
     .router-link-exact-active {
         background: rgb(74, 81, 140) !important;

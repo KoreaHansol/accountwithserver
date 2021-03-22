@@ -11,9 +11,13 @@ export default {
 }
 </script>
 
-<style scoped>
-  .app .row-container .content {
-    width: 85%;
-    background: whitesmoke;
+<style scoped lang='scss'>
+  .app {
+    .row-container {
+      .content {
+        width: 85%;
+        background: whitesmoke;
+      }
+    }
   }
 </style>
