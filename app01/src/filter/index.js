@@ -1,6 +1,3 @@
-import moment from 'moment'
-
-const momentConstructor = moment().constructor
 export default function install( Vue ) {
   var numberComma = ( n, zero = '0' ) => {
     let commaPoint, tempString, numberToString; 
