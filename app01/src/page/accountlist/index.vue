@@ -120,7 +120,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .container {
     display: flex;
     flex-direction: column;
@@ -131,10 +131,10 @@ export default {
    height: 10%;
    background: chocolate;
    text-align: center;
- }
- .acclist-title-row .acclist-title-col {
-   width: 20%;
-   align-self: center;
+   .acclist-title-col {
+      width: 20%;
+      align-self: center;
+    }
  }
 
  .acclist-row {
@@ -143,19 +143,19 @@ export default {
    flex: 0 0 auto;
    background: darkgrey;
    text-align: center;
+   .acclist-col {
+      display: flex;
+      height: 100%;
+      width: 16.6666%;
+      overflow: auto;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid;
+    }
  }
   .acclist-row:hover {
    background: blanchedalmond;
    cursor: pointer;
- }
- .acclist-row .acclist-col {
-   display: flex;
-   height: 100%;
-   width: 16.6666%;
-   overflow: auto;
-   align-items: center;
-   justify-content: center;
-   border: 1px solid;
  }
   .hover:hover {
    cursor: pointer;
@@ -170,13 +170,13 @@ export default {
 
  .display-month {
     display: flex;
-    justify-content: space-between
-  }
-  .display-month .move-month-button {
-    background: blanchedalmond;
-  }
-  .display-month .move-month-button:hover {
-    cursor: pointer;
+    justify-content: space-between;
+    .move-month-button {
+      background: blanchedalmond;
+    }
+    .move-month-button:hover {
+      cursor: pointer;
+    }
   }
   .no-data {
     text-align: center;
