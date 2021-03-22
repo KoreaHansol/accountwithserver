@@ -2,7 +2,7 @@ import moment from 'moment'
 
 const momentConstructor = moment().constructor
 export default function install( Vue ) {
-  var numberComma = ( n, zero = '0', sign ) => {
+  var numberComma = ( n, zero = '0' ) => {
     let commaPoint, tempString, numberToString; 
        
     numberToString = n.toString(); 
@@ -19,8 +19,8 @@ export default function install( Vue ) {
      
     return tempString;
   }
-  Vue.filter( 'numberComma', ( n, zero = '0', sign ) => {
-    return numberComma(n, zero, sign)
+  Vue.filter( 'numberComma', ( n, zero = '0' ) => {
+    return numberComma(n, zero)
   })
 
   var dateToKorean = ( n ) => {
