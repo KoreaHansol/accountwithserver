@@ -38,9 +38,6 @@ export default {
   components: {
     Calender
   },
-  computed: {
-    
-  },
   data() {
     return {
       insertDate: '',
@@ -54,6 +51,9 @@ export default {
       errorValidContent: false,
 
     }
+  },  
+  computed: {
+    
   },
   methods: {
     setDayFromChild(day) {

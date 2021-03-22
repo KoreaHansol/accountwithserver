@@ -2,8 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from "./router/index";
 import store from './store/index.js'
+import FilterSetup from './filter'
 
 Vue.config.productionTip = false
+Vue.use(FilterSetup)
 
 new Vue({
   router,

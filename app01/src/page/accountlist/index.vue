@@ -16,9 +16,9 @@
     
     <div class="list-container">
       <div class="acclist-row" v-for="acc, idx in filterBySelectDay" :key="idx">
-        <div class="acclist-col"><div class="font">{{ acc.date }}</div></div>
-        <div class="acclist-col"><div class="font">{{ acc.income }}</div></div>
-        <div class="acclist-col"><div class="font">{{ acc.outcome }}</div></div>
+        <div class="acclist-col"><div class="font">{{ acc.date | dateToKorean}}</div></div>
+        <div class="acclist-col"><div class="font">{{ acc.income | numberComma }}</div></div>
+        <div class="acclist-col"><div class="font">{{ acc.outcome | numberComma}}</div></div>
          <div class="acclist-col"><div class="font">{{ acc.content }}</div></div>
         <div class="acclist-col hover" @click="updateAccListToSeq(acc.seq)"><div class="font">수정</div></div>
         <div class="acclist-col hover" @click="deleteAccListToSeq(acc.seq)"><div class="font">삭제</div></div>
@@ -76,10 +76,9 @@ export default {
   },
   methods: {
     reqAccListToServer() {
-      let accountListFromServer = []
       req2svr.getAllAccountList()
       .then( res => {
-        accountListFromServer = res.payload;
+        let accountListFromServer = res.payload;
         this.$store.commit('setAccoutListFromServer', accountListFromServer) //store에 저장
       })
     },
