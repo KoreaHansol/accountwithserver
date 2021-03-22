@@ -105,26 +105,26 @@ export default {
     flex-direction: row;
     background: antiquewhite;
     height: 14%;
-  }
-  .day-of-week .day-area {
-    display: flex;
-    width: 14.285714%;
-    flex: 0 auto;
-    height: 100%;
-    border: solid 1px;
-    justify-content: center;
-  }
-  .day-of-week .day-area .day-font {
-    align-self: center;
+    .day-area {
+      display: flex;
+      width: 14.285714%;
+      flex: 0 auto;
+      height: 100%;
+      border: solid 1px;
+      justify-content: center;
+      .day-font {
+        align-self: center;
+      }
+    }
   }
 
   // 상단 - 화살표쪽
   .display-month {
     display: flex;
-    justify-content: space-between
-  }
-  .display-month .move-month-button:hover {
-    cursor: pointer;
+    justify-content: space-between;
+    .move-month-button:hover {
+      cursor: pointer;
+    }
   }
 
   // 요일들
@@ -133,19 +133,19 @@ export default {
     flex-direction: row;
     flex-wrap: wrap;
     height: 14%;
-  }
-  .day-of-row .day-font {
-    display: flex;
-    width: 14.285714%;
-    flex: 0 auto;
-    height: 100%;
-    z-index: 9999;
-    background: beige;
-    border: solid 1px;
-    justify-content: center;
-  }
-  .day-of-row .day-font:hover {
-    cursor: pointer;
-    background: white;
+    .day-font {
+      display: flex;
+      width: 14.285714%;
+      flex: 0 auto;
+      height: 100%;
+      z-index: 9999;
+      background: beige;
+      border: solid 1px;
+      justify-content: center;
+    }
+    .day-font:hover {
+        cursor: pointer;
+        background: white;
+      }
   }
 </style>
