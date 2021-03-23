@@ -16,8 +16,8 @@
     
     <div class="list-container">
       <div class="acclist-row" v-for="acc, idx in filterBySelectDay" :key="idx">
-        <div class="acclist-col"><div class="font">{{ acc.date | dateToKorean}}</div></div>
-        <div class="acclist-col"><div class="font">{{ acc.income | numberComma }}</div></div>
+        <div class="acclist-col"><div class="font">{{ acc.date | dateFormatKr}}</div></div>
+        <div class="acclist-col"><div class="font" >{{ acc.income | numberComma }}</div></div>
         <div class="acclist-col"><div class="font">{{ acc.outcome | numberComma}}</div></div>
          <div class="acclist-col"><div class="font">{{ acc.content }}</div></div>
         <div class="acclist-col hover" @click="updateAccListToSeq(acc.seq)"><div class="font">수정</div></div>
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="sumAccIncomeAndOutcom">
-      <div class=""><div class="font-sum">: {{ getSumByFilterdMonth }}원</div></div>
+      <div class=""><div class="font-sum">: {{ getSumByFilterdMonth | numberComma }}원</div></div>
       <div class=""><div class="font-sum">합계 </div></div>
     </div>
   </div>
@@ -146,7 +146,7 @@ export default {
    .acclist-col {
       display: flex;
       height: 100%;
-      width: 16.6666%;
+      flex: 1;
       overflow: auto;
       align-items: center;
       justify-content: center;
