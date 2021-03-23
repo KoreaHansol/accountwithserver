@@ -5,6 +5,9 @@
       <Sidemunu />
       <Content />
     </div>
+    <div class="popup">
+      <popup-anchor></popup-anchor>
+    </div>
   </div>
 </template>
 

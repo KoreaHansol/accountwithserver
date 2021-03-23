@@ -109,7 +109,7 @@ export default {
       }
     },
     updateAccListToSeq(seq) {
-      this.$router.push({ name: 'accountupdate', params: {seq: seq}})
+      this.$router.push({ name: 'accountupdate', params: { seq: seq }})
     },
     deleteAccListToSeq(seq) {
       req2svr.deleteList(seq).then(()=> {

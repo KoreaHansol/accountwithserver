@@ -26,6 +26,12 @@
         <div class="button-area" @click="pushCancleButton">
             <div class="button-font">취소</div>
         </div>
+         <!-- <div class="button-area" @click="pushOpenPopupButton">
+            <div class="button-font">OpenPopup</div>
+        </div>
+         <div class="button-area" @click="pushClosePopupButton">
+            <div class="button-font">ClosePopup</div>
+        </div> -->
     </div>
   </div>
 </template>
@@ -33,10 +39,12 @@
 <script>
 import Calender from '@/components/calander'
 import req2svr from './req2svr'
+import popupAnnchor from '../../plugins/popupmanager'
 export default {
   name: 'accountadd',
   components: {
-    Calender
+    Calender,
+    popupAnnchor
   },
   data() {
     return {
@@ -49,7 +57,9 @@ export default {
       errorIncome: false,
       errorValidOutcome: false,
       errorValidContent: false,
+      
 
+      instance: null
     }
   },  
   computed: {
@@ -101,12 +111,24 @@ export default {
         }
 
         req2svr.addList(insertOjb).then(()=> {
-            this.$router.push({ name: 'accountlist', params: {date: this.insertDate}})
+            this.$router.push({ name: 'accountlist', params: { date: this.insertDate }})
         })
     },
     pushCancleButton() {
         this.$router.push({ name: 'accountlist' })
-    }
+    },
+    pushOpenPopupButton() {
+        this.$popupManager.open( Calender )
+        // this.instance = this.$PopupManager.open(Calender, {}, 'backIgnore')
+        // console.log('popupManager ', this.$popupManager)
+        // console.log('popup is open? ', this.$popupManager.isOpened(Calender))
+        // console.log('intance is ', this.instance)
+    },
+    pushClosePopupButton() {
+        const instance = this.$popupManager.close(this.instance, {})
+        console.log('popup is open? ', this.$popupManager.isOpened(Calender))
+        console.log('close instance ', instance)
+    },
   }
 }
 </script>

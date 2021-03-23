@@ -113,7 +113,7 @@ export default {
             seq: this.$route.params.seq
         }
         req2svr.updateList(updateOjb).then( ()=> {
-            this.$router.push({ name: 'accountlist', params: {date: this.updateDate}})
+            this.$router.push({ name: 'accountlist', params: { date: this.updateDate }})
         })
         
     },
